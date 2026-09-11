@@ -1,0 +1,12 @@
+# Composer dependencies; recreate with `composer install`
+/vendor/
+
+# IDE and editor files
+/.idea/
+/.vscode/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

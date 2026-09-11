@@ -1,0 +1,22 @@
+{
+    "name": "spiceweasel/make-stub",
+    "description": "Generate PHP extension stubs (*.stub.php) from a userland PHP library",
+    "type": "project",
+    "keywords": [
+        "php-extension",
+        "stubs",
+        "gen_stub",
+        "phpstorm"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "nikic/php-parser": "^5.0"
+    },
+    "bin": [
+        "make-stub.php"
+    ],
+    "config": {
+        "sort-packages": true
+    }
+}

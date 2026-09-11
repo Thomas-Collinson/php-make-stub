@@ -1,0 +1,36 @@
+# Dependabot configuration.
+# Reference: https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
+#
+# Dependabot security updates are switched on separately, in the repository's
+# Settings -> Advanced Security. They ignore the cooldown below and arrive as
+# soon as an advisory is published.
+
+version: 2
+updates:
+  # Composer dependencies (nikic/php-parser).
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Don't propose a release until it has been public for a week. Malicious
+    # versions are usually detected and pulled within hours of publication, so
+    # waiting keeps them out of composer.lock.
+    cooldown:
+      default-days: 7
+    # Keep the ^5.0 constraint in composer.json wide for anyone installing this
+    # as a dependency. Updates inside the range only touch composer.lock;
+    # composer.json changes only when a release falls outside it (a new major).
+    versioning-strategy: "increase-if-necessary"
+    commit-message:
+      prefix: "deps"
+
+  # Uncomment when the repository gains GitHub Actions workflows, so the
+  # actions they use (ideally pinned to commit SHAs) are kept up to date too.
+  # - package-ecosystem: "github-actions"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   cooldown:
+  #     default-days: 7
+  #   commit-message:
+  #     prefix: "ci"
