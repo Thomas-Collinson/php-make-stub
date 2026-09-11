@@ -1,5 +1,11 @@
 #!/usr/bin/env php
 <?php
+
+/*
+ * (c) 2026 Thomas Collinson
+ * All rights reserved
+ */
+
 declare(strict_types=1);
 
 /**

@@ -22,7 +22,7 @@ php make-stub.php --help
 As a development dependency of your extension's repository, which puts the script at `vendor/bin/make-stub.php`. This needs the package to be reachable by Composer, for example through a `vcs` or `path` repository, and the package name replaced with your own:
 
 ```sh
-composer require --dev your-vendor/make-stub
+composer require --dev spiceweasel/make-stub
 vendor/bin/make-stub.php --help
 ```
 
